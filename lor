@@ -1,0 +1,46 @@
+[31mF[0m[31mF[0m[31mF[0m[31mF[0m
+
+Failures:
+
+  1) Shopping Cart Rack App /cart responds with empty cart message if the cart is empty
+     [31mFailure/Error: get '/cart'[0m
+     [31mNoMethodError:[0m
+     [31m  undefined method `is_empty?' for []:Array[0m
+     [31m  Did you mean?  empty?[0m
+     [36m# ./app/application.rb:18:in `call'[0m
+     [36m# /Users/CorinneKelly/.rvm/gems/ruby-2.3.3/gems/rack-test-0.6.3/lib/rack/mock_session.rb:30:in `request'[0m
+     [36m# /Users/CorinneKelly/.rvm/gems/ruby-2.3.3/gems/rack-test-0.6.3/lib/rack/test.rb:244:in `process_request'[0m
+     [36m# /Users/CorinneKelly/.rvm/gems/ruby-2.3.3/gems/rack-test-0.6.3/lib/rack/test.rb:58:in `get'[0m
+     [36m# ./spec/rack_mechanics_spec.rb:10:in `block (3 levels) in <top (required)>'[0m
+
+  2) Shopping Cart Rack App /cart responds with a cart list if there is something in there
+     [31mFailure/Error: get '/cart'[0m
+     [31mNoMethodError:[0m
+     [31m  undefined method `is_empty?' for ["Apples", "Oranges"]:Array[0m
+     [31m  Did you mean?  empty?[0m
+     [36m# ./app/application.rb:18:in `call'[0m
+     [36m# /Users/CorinneKelly/.rvm/gems/ruby-2.3.3/gems/rack-test-0.6.3/lib/rack/mock_session.rb:30:in `request'[0m
+     [36m# /Users/CorinneKelly/.rvm/gems/ruby-2.3.3/gems/rack-test-0.6.3/lib/rack/test.rb:244:in `process_request'[0m
+     [36m# /Users/CorinneKelly/.rvm/gems/ruby-2.3.3/gems/rack-test-0.6.3/lib/rack/test.rb:58:in `get'[0m
+     [36m# ./spec/rack_mechanics_spec.rb:16:in `block (3 levels) in <top (required)>'[0m
+
+  3) Shopping Cart Rack App /add Will add an item that is in the @@items list
+     [31mFailure/Error: expect(last_response.body).to include("added Figs")[0m
+     [31m  expected "Path Not Found" to include "added Figs"[0m
+     [36m# ./spec/rack_mechanics_spec.rb:26:in `block (3 levels) in <top (required)>'[0m
+
+  4) Shopping Cart Rack App /add Will not add an item that is not in the @@items list
+     [31mFailure/Error: expect(last_response.body).to include("We don't have that item")[0m
+     [31m  expected "Path Not Found" to include "We don't have that item"[0m
+     [36m# ./spec/rack_mechanics_spec.rb:33:in `block (3 levels) in <top (required)>'[0m
+
+Finished in 0.03748 seconds (files took 0.15273 seconds to load)
+[31m4 examples, 4 failures[0m
+
+Failed examples:
+
+[31mrspec ./spec/rack_mechanics_spec.rb:8[0m [36m# Shopping Cart Rack App /cart responds with empty cart message if the cart is empty[0m
+[31mrspec ./spec/rack_mechanics_spec.rb:14[0m [36m# Shopping Cart Rack App /cart responds with a cart list if there is something in there[0m
+[31mrspec ./spec/rack_mechanics_spec.rb:23[0m [36m# Shopping Cart Rack App /add Will add an item that is in the @@items list[0m
+[31mrspec ./spec/rack_mechanics_spec.rb:30[0m [36m# Shopping Cart Rack App /add Will not add an item that is not in the @@items list[0m
+
